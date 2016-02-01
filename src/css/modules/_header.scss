@@ -11,6 +11,11 @@
     @include mq(mobileLandscape) {
         left: $gs-gutter;
     }
+
+    @include mq(tablet) {
+        max-width: 320px;
+        position: absolute;
+    }
 }
 
 .us-election__bar {
@@ -23,6 +28,10 @@
     }
 
     @include mq(tablet) {
+        width: 300px;
+    }
+
+    @include mq(leftCol) {
         height: 40px;
         width: 580px;
     }
@@ -43,20 +52,41 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position: right bottom;
+
+        @include mq(tablet) {
+            display: none;
+        }
+    }
+
+    @include mq(tablet) {
+        margin-left: 420px;
     }
 }
 
 .us-election__bar--2 {
     margin-left: 9%;
     width: 70%;
+
+    @include mq(tablet) {
+        width: 300px;
+        margin-left: 340px;
+    }
 }
 
 .us-election__bar--3 {
     margin-left: -10%;
+
+    @include mq(tablet) {
+        margin-left: 480px;
+    }
 }
 
 .us-election__bar--4 {
     margin-left: 27%;
+
+    @include mq(tablet) {
+        margin-left: 300px;
+    }
 }
 
 .us-election__bar--5 {
@@ -68,10 +98,36 @@
     @include mq(mobileLandscape) {
         bottom: -16px;
     }
+
+    @include mq(tablet) {
+        display: none;
+    }
 }
 
 .us-election__bar--6 {
     margin-left: 30%;
+
+    @include mq(tablet) {
+        width: 560px;
+        margin-left: -40px;
+    }
+
+    &:before {
+        position: absolute;
+        top: -127px;
+        left: 0;
+        content: '';
+        width: 44%;
+        height: 190px;
+        background-image: url("@@assetPath@@/imgs/people--desktop.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right bottom;
+
+        @include mq($until: tablet) {
+            display: none;
+        }
+    }
 }
 
 .us-election__bar--7 {
@@ -88,18 +144,31 @@
 
 .us-election__tagline--1 {
     text-indent: 10%;
+
+    @include mq(tablet) {
+        text-indent: 320px;
+    }
 }
 
 .us-election__tagline--2 {
     text-indent: 24%;
+
+    @include mq(tablet) {
+        text-indent: 320px;
+    }
 }
 
 .us-election__tagline--3 {
     text-indent: 3%;
+
+    @include mq(tablet) {
+        text-indent: 320px;
+    }
 }
 
 .us-election__description {
     margin-top: 6px;
+    margin-bottom: 0;
     padding-bottom: 32px;
     @include fs-body();
     max-width: 400px;
@@ -107,13 +176,13 @@
     @include mq(mobileLandscape) {
         padding-bottom: 48px;
     }
+
+    @include mq(tablet) {
+        margin-left: 320px;
+    }
 }
 
 .us-election__header-2 {
-    @include mq(tablet) {
-        background-color: $c-blue;
-    }
-
     iframe {
         margin-bottom: -10px;
         max-width: 280px;
@@ -122,7 +191,15 @@
             margin-top: 12px;
             max-width: 280px;
         }
+
+        @include mq(tablet) {
+            max-width: 240px;
+        }
     }
+}
+
+.us-election__email {
+    margin-left: 320px;
 }
 
 .us-election__subtitle {
@@ -150,8 +227,16 @@
         margin-top: $gs-baseline;
         margin-right: 3px;
     }
+
+    @include mq(tablet) {
+        margin-right: 20px;
+    }
 }
 
 .us-election__apps {
     margin: $gs-baseline 0;
+
+    @include mq(tablet) {
+        margin-left: 180px;
+    }
 }

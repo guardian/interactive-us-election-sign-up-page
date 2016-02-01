@@ -18,8 +18,8 @@ $mq-breakpoints: (
         @include fs-headline(4);
     }
 
-    @include mq(desktop) {
-        @include fs-headline(7);
+    @include mq(tablet) {
+        @include fs-headline(5);
     }
 }
 
