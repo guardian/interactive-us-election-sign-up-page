@@ -1,19 +1,11 @@
 define([
     'ractive',
     'jquery',
-    'text!./templates/appTemplate.html',
-    'text!./templates/headerTemplate.html',
-    'text!./templates/shareTemplate.html',
-    'text!./templates/bodyTemplate.html',
-    'text!./templates/footerTemplate.html'
+    'text!./templates/appTemplate.html'
 ], function(
     Ractive,
     $,
-    appTemplate,
-    headerTemplate,
-    shareTemplate,
-    bodyTemplate,
-    footerTemplate
+    appTemplate
 ) {
    'use strict';
     var data;
@@ -48,11 +40,6 @@ define([
     }
 
     function renderPage(el){
-        var appHeader           = Ractive.extend({template:headerTemplate});
-        var shareContainer      = Ractive.extend({template:shareTemplate});
-        var bodyContainer       = Ractive.extend({template:bodyTemplate});
-        var footerContainer     = Ractive.extend({template:footerTemplate});
-
         var addEvent = function(object, type, callback) {
             if (object == null || typeof(object) == 'undefined') return;
             if (object.addEventListener) {
@@ -80,24 +67,11 @@ define([
         var app = new Ractive({
             el:el,
             template:appTemplate,
-            components: {
-                appHeader:appHeader,
-                shareContainer:shareContainer,
-                bodyContainer:bodyContainer,
-                footerContainer:footerContainer
-            },
             data:data
         })
 
-        positionStats();
         triggerEvent(window, 'interactive-loaded');
     }
-
-    function positionStats() {
-        $(".this-is-the-nhs__stat-one").insertAfter(".this-is-the-nhs__body p:nth-of-type(2)");
-        $(".this-is-the-nhs__stat-two").insertAfter(".this-is-the-nhs__body p:nth-of-type(5)");
-    }
-
 
     return {
         init: init

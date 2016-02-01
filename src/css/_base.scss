@@ -11,23 +11,30 @@ $mq-breakpoints: (
 
 // Font Sizes
 @mixin fs-primary() {
-    @include fs-headline(9);
-    font-size: 66px;
-    line-height: 78px;
-    font-weight: 100;
+    @include fs-headline(2);
+    font-weight: 800 !important;
+
+    @include mq(mobileLandscape) {
+        @include fs-headline(4);
+    }
 
     @include mq(desktop) {
-        font-size: 94px;
-        line-height: 100px;
+        @include fs-headline(7);
     }
 }
 
 @mixin fs-secondary() {
     @include fs-header(1);
 
+
+
     @include mq(desktop) {
         @include fs-header(2);
     }
+}
+
+@mixin fs-body() {
+    @include fs-bodyCopy(1);
 }
 
 @mixin fs-meta() {
@@ -35,25 +42,10 @@ $mq-breakpoints: (
 }
 
 // Colour
-$c-grey: guss-colour(neutral-7, $pasteup-palette);
-$c-blue: darken(guss-colour(news-support-2, $pasteup-palette), 10%);
-$c-dark-blue: guss-colour(news-support-6, $pasteup-palette);
-$c-light-blue: guss-colour(news-support-3, $pasteup-palette);
 $c-black: guss-colour(neutral-1, $pasteup-palette);
-$c-yellow: guss-colour(multimedia-main-2, $pasteup-palette);
+$c-blue: guss-colour(news-main-1, $pasteup-palette);
+$c-red: #e9212d;
 $c-white: #ffffff;
-
-.this-is-the-nhs__bar {
-    display: block;
-    height: gs-height(2) - $gs-baseline;
-    padding: 3px;
-    box-sizing: border-box;
-    background-color: guss-colour(neutral-7, $pasteup-palette);
-
-    @include mq(desktop) {
-        height: gs-height(2) + $gs-baseline;
-    }
-}
 
 .js-on.is-modern .is-immersive-interactive .content--interactive, .js-on.is-modern .is-immersive-interactive .content--interactive ~ *, .js-on.is-modern .is-immersive-interactive .l-footer {
     display: block;
