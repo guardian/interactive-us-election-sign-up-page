@@ -8,9 +8,17 @@
 .us-election__body {
     @include fs-body();
 
+    @include mq(tablet) {
+        columns: 300px 2;
+    }
+
     p {
         margin-bottom: 12px;
         max-width: 400px;
+
+        @include mq(tablet) {
+            margin-bottom: 24px;
+        }
     }
 }
 

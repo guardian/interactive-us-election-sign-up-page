@@ -26,8 +26,6 @@ $mq-breakpoints: (
 @mixin fs-secondary() {
     @include fs-header(1);
 
-
-
     @include mq(desktop) {
         @include fs-header(2);
     }
@@ -35,6 +33,11 @@ $mq-breakpoints: (
 
 @mixin fs-body() {
     @include fs-bodyCopy(1);
+
+    @include mq(tablet) {
+        @include fs-bodyCopy(2);
+        line-height: 22px;
+    }
 }
 
 @mixin fs-meta() {

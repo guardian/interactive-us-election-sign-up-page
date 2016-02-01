@@ -85,7 +85,8 @@
     margin-left: 27%;
 
     @include mq(tablet) {
-        margin-left: 300px;
+        margin-left: 240px;
+        width: 420px;
     }
 }
 
@@ -179,6 +180,8 @@
 
     @include mq(tablet) {
         margin-left: 320px;
+        padding-bottom: 28px;
+        font-weight: bold;
     }
 }
 
