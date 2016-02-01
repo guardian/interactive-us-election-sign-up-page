@@ -2,6 +2,14 @@
     @include mq(leftCol) {
         margin-top: 12px;
     }
+
+    .gs-container {
+        @include mq(wide) {
+            background-image: url("@@assetPath@@/imgs/whitehouse.png");
+            background-repeat: no-repeat;
+            background-position: 90px bottom;
+        }
+    }
 }
 
 .us-election__body-header {
@@ -31,6 +39,7 @@
 
     @include mq(tablet) {
         columns: 300px 2;
+        column-gap: 20px;
     }
 
     @include mq(desktop) {
@@ -38,7 +47,7 @@
     }
 
     @include mq(leftCol) {
-        margin-right: 280px;
+        margin-right: 260px;
     }
 
     @include mq(wide) {
@@ -47,20 +56,28 @@
     }
 
     p {
-        margin-bottom: 12px;
+        margin-bottom: 0;
+        padding-bottom: 12px;
         max-width: 400px;
+        -webkit-page-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
 
         @include mq(tablet) {
-            margin-bottom: 24px;
+            padding-bottom: 24px;
         }
 
         @include mq(desktop) {
             max-width: 300px;
         }
     }
+
+    img {
+        display: block;
+    }
 }
 
-p.us-election__question {
+.us-election__question {
     color: $c-red;
-    margin-bottom: 0;
+    padding-bottom: 0;
 }

@@ -283,6 +283,10 @@
 }
 
 .us-election__email {
+    @include mq(mobileLandscape, tablet) {
+        margin-top: 14px;
+    }
+
     @include mq(tablet) {
         margin-left: 320px;
     }
