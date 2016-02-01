@@ -16,6 +16,10 @@
         max-width: 320px;
         position: absolute;
     }
+
+    @include mq(desktop) {
+        max-width: 360px;
+    }
 }
 
 .us-election__bar {
@@ -29,6 +33,10 @@
 
     @include mq(tablet) {
         width: 300px;
+    }
+
+    @include mq(desktop) {
+        width: 420px;
     }
 
     @include mq(leftCol) {
@@ -61,6 +69,10 @@
     @include mq(tablet) {
         margin-left: 420px;
     }
+
+    @include mq(desktop) {
+        margin-left: 500px;
+    }
 }
 
 .us-election__bar--2 {
@@ -71,6 +83,10 @@
         width: 300px;
         margin-left: 340px;
     }
+
+    @include mq(desktop) {
+        margin-left: 400px;
+    }
 }
 
 .us-election__bar--3 {
@@ -78,6 +94,10 @@
 
     @include mq(tablet) {
         margin-left: 480px;
+    }
+
+    @include mq(desktop) {
+        margin-left: 560px;
     }
 }
 
@@ -87,6 +107,11 @@
     @include mq(tablet) {
         margin-left: 240px;
         width: 420px;
+    }
+
+    @include mq(desktop) {
+        margin-left: 320px;
+        width: 460px;
     }
 }
 
@@ -149,6 +174,10 @@
     @include mq(tablet) {
         text-indent: 320px;
     }
+
+    @include mq(desktop) {
+        text-indent: 380px;
+    }
 }
 
 .us-election__tagline--2 {
@@ -157,6 +186,10 @@
     @include mq(tablet) {
         text-indent: 320px;
     }
+
+    @include mq(desktop) {
+        text-indent: 500px;
+    }
 }
 
 .us-election__tagline--3 {
@@ -164,6 +197,10 @@
 
     @include mq(tablet) {
         text-indent: 320px;
+    }
+
+    @include mq(desktop) {
+        text-indent: 420px;
     }
 }
 
@@ -182,6 +219,10 @@
         margin-left: 320px;
         padding-bottom: 28px;
         font-weight: bold;
+    }
+
+    @include mq(desktop) {
+        margin-left: 500px;
     }
 }
 
@@ -202,7 +243,13 @@
 }
 
 .us-election__email {
-    margin-left: 320px;
+    @include mq(tablet) {
+        margin-left: 320px;
+    }
+
+    @include mq(desktop) {
+        margin-left: 500px;
+    }
 }
 
 .us-election__subtitle {
@@ -241,5 +288,9 @@
 
     @include mq(tablet) {
         margin-left: 180px;
+    }
+
+    @include mq(desktop) {
+        margin-left: 360px;
     }
 }

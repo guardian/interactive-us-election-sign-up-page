@@ -3,6 +3,10 @@
     margin-top: 3px;
     color: $c-red;
     margin-bottom: 12px;
+
+    @include mq(desktop) {
+        margin-top: 10px;
+    }
 }
 
 .us-election__body {
@@ -12,12 +16,20 @@
         columns: 300px 2;
     }
 
+    @include mq(desktop) {
+        margin-right: 300px;
+    }
+
     p {
         margin-bottom: 12px;
         max-width: 400px;
 
         @include mq(tablet) {
             margin-bottom: 24px;
+        }
+
+        @include mq(desktop) {
+            max-width: 300px;
         }
     }
 }
