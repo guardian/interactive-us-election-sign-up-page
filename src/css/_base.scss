@@ -21,6 +21,10 @@ $mq-breakpoints: (
     @include mq(tablet) {
         @include fs-headline(5);
     }
+
+    @include mq(leftCol) {
+        @include fs-headline(6);
+    }
 }
 
 @mixin fs-secondary() {

@@ -1,3 +1,9 @@
+.us-election__content {
+    @include mq(leftCol) {
+        margin-top: 12px;
+    }
+}
+
 .us-election__body-header {
     @include fs-primary();
     margin-top: 3px;
@@ -6,6 +12,17 @@
 
     @include mq(desktop) {
         margin-top: 10px;
+    }
+
+    @include mq(leftCol) {
+        float: left;
+        width: 180px;
+        margin-right: 20px;
+        margin-top: 0;
+    }
+
+    @include mq(wide) {
+        width: 220px;
     }
 }
 
@@ -18,6 +35,15 @@
 
     @include mq(desktop) {
         margin-right: 300px;
+    }
+
+    @include mq(leftCol) {
+        margin-right: 280px;
+    }
+
+    @include mq(wide) {
+        columns: 300px 3;
+        margin-right: 80px;
     }
 
     p {
