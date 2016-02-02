@@ -6,9 +6,17 @@
     }
 
     .gs-container {
-        @include mq(wide) {
+        @include mq(desktop) {
             background-image: url("@@assetPath@@/imgs/whitehouse.png");
             background-repeat: no-repeat;
+            background-position: 610px bottom;
+        }
+
+        @include mq(leftCol) {
+            background-position: 770px bottom;
+        }
+
+        @include mq(wide) {
             background-position: 90px bottom;
         }
     }
@@ -17,8 +25,15 @@
 .us-election__body-header {
     @include fs-primary();
     margin-top: 3px;
-    color: $c-red;
-    margin-bottom: 12px;
+    color: $c-blue;
+
+    @include mq(mobileLandscape) {
+        margin-bottom: 12px;
+    }
+
+    @include mq(tablet) {
+        margin-bottom: 24px;
+    }
 
     @include mq(desktop) {
         margin-top: 10px;
@@ -57,6 +72,16 @@
         margin-right: 80px;
     }
 
+    a {
+        color: $c-blue;
+        border-bottom: 1px solid lighten($c-red, 40%);
+
+        &:hover {
+            text-decoration: none;
+            border-bottom-color: $c-red;
+        }
+    }
+
     p {
         margin-bottom: 0;
         padding-bottom: 12px;
@@ -76,10 +101,37 @@
 
     img {
         display: block;
+        margin-bottom: 6px;
+        max-width: 100%;
     }
 }
 
 .us-election__question {
     color: $c-red;
     padding-bottom: 0;
+    font-weight: bold;
+}
+
+.us-election__ios--middle {
+    display: block;
+
+    @include mq(tablet) {
+        display: none;
+    }
+
+    @include mq(wide) {
+        display: block;
+    }
+}
+
+.us-election__ios--end {
+    display: none;
+
+    @include mq(tablet) {
+        display: block;
+    }
+
+    @include mq(wide) {
+        display: none;
+    }
 }

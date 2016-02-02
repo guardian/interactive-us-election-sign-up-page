@@ -44,10 +44,6 @@ $mq-breakpoints: (
     }
 }
 
-@mixin fs-meta() {
-    @include fs-textSans(2);
-}
-
 // Colour
 $c-black: guss-colour(neutral-1, $pasteup-palette);
 $c-blue: guss-colour(news-main-1, $pasteup-palette);

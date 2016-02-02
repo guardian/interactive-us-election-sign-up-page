@@ -29,6 +29,8 @@
 
     @include mq(mobileLandscape) {
         height: 32px;
+        margin-top: 3px;
+        margin-bottom: 3px;
     }
 
     @include mq(tablet) {
@@ -40,7 +42,7 @@
     }
 
     @include mq(leftCol) {
-        height: 40px;
+        height: 36px;
         width: 580px;
     }
 }
@@ -80,10 +82,10 @@
 }
 
 .us-election__bar--2 {
-    margin-left: 9%;
-    width: 70%;
+    display: none;
 
     @include mq(tablet) {
+        display: block;
         width: 300px;
         margin-left: 340px;
     }
@@ -98,9 +100,10 @@
 }
 
 .us-election__bar--3 {
-    margin-left: -10%;
+    display: none;
 
     @include mq(tablet) {
+        display: block;
         margin-left: 480px;
     }
 
@@ -114,7 +117,7 @@
 }
 
 .us-election__bar--4 {
-    margin-left: 27%;
+    margin-left: 14%;
 
     @include mq(tablet) {
         margin-left: 240px;
@@ -143,20 +146,22 @@
 }
 
 .us-election__bar--6 {
-    margin-left: 30%;
+    display: none;
+    position: relative;
 
     @include mq(tablet) {
+        display: block;
         width: 560px;
         margin-left: -40px;
     }
 
     &:before {
         position: absolute;
-        top: -127px;
+        top: -180px;
         left: 0;
         content: '';
-        width: 44%;
-        height: 190px;
+        width: 62%;
+        height: 180px;
         background-image: url("@@assetPath@@/imgs/people--desktop.png");
         background-repeat: no-repeat;
         background-size: contain;
@@ -166,23 +171,32 @@
             display: none;
         }
 
+        @include mq(desktop) {
+            width: 74%;
+        }
+
         @include mq(leftCol) {
-            top: -187px;
+            top: -250px;
             left: 0;
-            content: '';
-            width: 44%;
+            width: 90%;
             height: 250px;
         }
 
-        @include mq(wide) {
-            width: 40%;
-        }
     }
 }
 
 .us-election__bar--7 {
     width: 70%;
     margin-left: 10%;
+
+    @include mq($until: mobileLandscape) {
+        margin-bottom: 3px;
+        margin-top: 24px;
+    }
+
+    @include mq(tablet) {
+        margin-top: 0;
+    }
 }
 
 .us-election__tagline {
@@ -249,7 +263,7 @@
 
     @include mq(tablet) {
         margin-left: 320px;
-        padding-bottom: 28px;
+        padding-bottom: 36px;
         font-weight: bold;
     }
 
@@ -280,6 +294,7 @@
 
         @include mq(tablet) {
             max-width: 240px;
+            margin-top: 8px;
         }
     }
 }
@@ -316,20 +331,26 @@
 }
 
 .us-election__subtitle--1 {
-    margin: 12px 0;
+    margin: 12px 0 6px;
 
     @include mq(mobileLandscape) {
         margin-top: 24px;
         margin-right: $gs-gutter;
+        margin-bottom: 12px;
+    }
+
+    @include mq(tablet) {
+        margin-top: 20px;
     }
 }
 
 .us-election__subtitle--2 {
-    margin: 3px 0 12px;
+    margin: 3px 0 6px;
 
     @include mq(mobileLandscape) {
         margin-top: $gs-baseline;
         margin-right: 3px;
+        margin-bottom: 12px;
     }
 
     @include mq(tablet) {
@@ -342,6 +363,8 @@
 
     @include mq(tablet) {
         margin-left: 180px;
+        margin-top: 8px;
+        margin-bottom: 2px;
     }
 
     @include mq(desktop) {
