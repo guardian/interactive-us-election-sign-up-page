@@ -54,6 +54,11 @@ $c-blue: guss-colour(news-main-1, $pasteup-palette);
 $c-red: #e9212d;
 $c-white: #ffffff;
 
+// Existing
+.article--standard .gs-container {
+    padding: 0 10px;
+}
+
 .js-on.is-modern .is-immersive-interactive .content--interactive, .js-on.is-modern .is-immersive-interactive .content--interactive ~ *, .js-on.is-modern .is-immersive-interactive .l-footer {
     display: block;
 }

@@ -1,4 +1,6 @@
 .us-election__content {
+    background-color: $c-white;
+
     @include mq(leftCol) {
         margin-top: 12px;
     }
