@@ -1,137 +1,803 @@
-.us-election__content {
-    background-color: $c-white;
+// $mq-breakpoints: (
+//     mobile:          320px,
+//     mobileLandscape: 480px,
+//     phablet:         660px,
+//     mobileLandscape:          740px,
+//     desktop:         980px,
+//     leftCol:         1140px,
+//     wide:            1300px
+// );
+.membership-interactive{
 
-    @include mq(leftCol) {
-        margin-top: 12px;
+  &__intro{
+    width: 301px;
+    margin-left: -231px;
+    color: white;
+    padding: 12px;
+    background-color: #005689;
+    float: left;
+    margin-right: 26px;
+    margin-bottom: 20px;
+    margin-top: 7px;
+
+    a{
+      color: white;
+      font-family: 'Guardian Sans Web', 'Guardian Agate Sans 1 Web';
     }
 
-    .gs-container {
-        @include mq(desktop) {
-            background-image: url("@@assetPath@@/imgs/whitehouse.png");
-            background-repeat: no-repeat;
-            background-position: 610px bottom;
+    &::before{
+      content: "";
+      display: block;
+      background-color: #00b0ce;
+      height: 239px;
+      width: 328px;
+      position: absolute;
+      -webkit-transform: rotate(7deg);
+      transform: rotate(6deg);
+      left: -234px;
+      z-index: -20;
+      margin-top: -11px;
+
+      @include mq($until:wide){
+          left: -164px;
+      }
+
+      @include mq($until: leftCol){
+        left:-4px;
+        height: 280px;
+        width: 284px;
+      }
+
+      @include mq($until:mobileLandscape){
+        margin-left:auto;
+        margin-right:auto;
+        left:32px;
+      }
+    }
+
+    h2{
+      font-family: 'Guardian Sans Web' , 'Guardian Agate Sans 1 Web';
+      font-size: 20px;
+      line-height: 21px;
+      margin-bottom: 8px;
+    }
+
+    h3{
+      font-family: 'Guardian Sans Web' , 'Guardian Agate Sans 1 Web';
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    @include mq($until:wide){
+      margin-left: -164px;
+    }
+
+    @include mq($until:leftCol){
+      margin-left:1px;
+      width:251px;
+    }
+
+    @include mq($until:mobileLandscape){
+      margin-left:auto;
+      margin-right:auto;
+      margin-top:20px;
+      float:none;
+    }
+  }
+
+  &__video{
+    position: relative;
+    width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+
+    @include mq($until: mobileLandscape){
+      width: 100%;
+    }
+
+    &:hover{
+      .video-button{
+        &[data-playing]{
+          opacity: 1;
+        }
+      }
+      .video-time{
+        &[data-playing]{
+          opacity: 1;
+        }
+      }
+    }
+
+    video{
+      width: 980px;
+
+      @include mq($until: desktop){
+        width: 710px;
+      }
+
+      @include mq($until: tablet){
+        width: 96vw;
+      }
+
+      @include mq($until:mobileLandscape){
+        width: 107%;
+        margin-left: -3.5%;
+      }
+    }
+
+    .video-time{
+      width: 90px;
+      height: 90px;
+      bottom:44.9%;
+      left:48%;
+      z-index: 2000;
+      position: absolute;
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
+
+      @include mq($until: desktop){
+        left:35%;
+        bottom:48.5%;
+      }
+
+      @include mq($until: tablet){
+        left:47vw;
+        bottom:49.5%;
+      }
+
+      @include mq($until: mobileLandscape){
+        left:39vw;
+        bottom:34.5%;
+      }
+
+      &[data-playing]{
+        opacity: 0;
+
+        .time{
+          opacity: 0;
         }
 
-        @include mq(leftCol) {
-            background-position: 770px bottom;
+        .time-update{
+          opacity: 1;
         }
+      }
 
-        @include mq(wide) {
-            background-position: 90px bottom;
+      .time{
+        position:absolute;
+        top: 48%;
+        left: 46%;
+        font-family: 'Guardian Sans Web', 'Guardian Agate Sans 1 Web';
+        color: #00b0ce;
+        font-weight: 600;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+
+        @include mq($until:mobileLandscape){
+          left:51%;
         }
+      }
+
+      .time-update{
+        position: absolute;
+        top: 49%;
+        left: 46%;
+        font-family: 'Guardian Sans Web', 'Guardian Agate Sans 1 Web';
+        color: #00b0ce;
+        font-weight: 600;
+        opacity: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+
+        @include mq($until:mobileLandscape){
+          left:52%;
+        }
+      }
+
+      svg{
+        width: 120%;
+        height: 120%;
+        -webkit-transform: rotate(200deg);
+        transform: rotate(200deg);
+      }
     }
-}
+    .video-button{
+      height: 90px;
+      width: 90px;
+      background-color: #00b0ce;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 43%;
+      left: 41%;
+      z-index: 3000;
+      -webkit-transition: opacity 1s ease-in-out;
+      -moz-transition: opacity 1s ease-in-out;
+      -o-transition: opacity 1s ease-in-out;
+      transition: opacity 1s ease-in-out;
+      cursor: pointer;
 
-.us-election__body-header {
-    @include fs-primary();
-    margin-top: 3px;
-    color: $c-blue;
+      @include mq($until:desktop){
+        bottom: 46%;
+        left: 29%;
+      }
 
-    @include mq(mobileLandscape) {
-        margin-bottom: 12px;
+      @include mq($until:tablet){
+        left:35vw;
+      }
+
+      @include mq($until:mobileLandscape){
+        bottom: 30%;
+        left: 27%;
+      }
+
+      &[data-playing]{
+        opacity: 0;
+      }
+
+      svg{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        margin-top: 27px;
+      }
+    }
+  }
+
+  &__content{
+    margin-top: 12px;
+
+    p:first-child, p:nth-child(2){
+      font-family: $f-serif-headline;
+      font-weight: 200;
+      color: $byline;
+      font-size: 32px;
+      line-height: 34px;
+      margin-bottom: 16px;
+
+      @include mq($until:mobileLandscape){
+        font-size: 22px;
+        line-height: 22px;
+      }
     }
 
-    @include mq(tablet) {
-        margin-bottom: 24px;
-    }
-
-    @include mq(desktop) {
-        margin-top: 10px;
-    }
-
-    @include mq(leftCol) {
+    p:first-child{
+      &::before{
+        display: block;
+        content: url('https://s3.amazonaws.com/gdn-cdn/2016/02/membership-liverpool-one/assets-1465921365678/imgs/quote_marks_outline.svg');
         float: left;
-        width: 180px;
-        margin-right: 20px;
-        margin-top: 0;
+        margin-right: 4px;
+        margin-top: 4px;
+        height: 20px;
+      }
     }
 
-    @include mq(wide) {
-        width: 220px;
-    }
-}
-
-.us-election__body {
-    @include fs-body();
-
-    @include mq(tablet) {
-        columns: 300px 2;
-        column-gap: 20px;
+    .drop{
+      color: $byline;
+      font-size: 100px;
+      line-height: 72px;
+      padding-right: 8px;
+      font-family: $f-serif-headline;
+      font-weight: 200;
     }
 
-    @include mq(desktop) {
-        margin-right: 300px;
+    iframe{
+      border: none;
+      margin-top: -93px;
     }
 
-    @include mq(leftCol) {
-        margin-right: 260px;
-    }
+    .content__secondary-column{
+        @include mq($until:desktop){
+          position: relative;
+          display: block;
+          padding: 0px;
+          margin: 0px auto;
+          width: 90%;
+        }
 
-    @include mq(wide) {
-        columns: 300px 3;
-        margin-right: 80px;
-    }
-
-    a {
-        color: $c-blue;
-        border-bottom: 1px solid lighten($c-red, 40%);
-
-        &:hover {
-            text-decoration: none;
-            border-bottom-color: $c-red;
+        @include mq($until:mobileLandscape){
+          margin-right:auto;
+          margin-left:auto;
         }
     }
 
-    p {
-        margin-bottom: 0;
-        padding-bottom: 12px;
-        max-width: 400px;
-        -webkit-page-break-inside: avoid;
-        page-break-inside: avoid;
-        break-inside: avoid;
-
-        @include mq(tablet) {
-            padding-bottom: 24px;
+    .element--immersive{
+      &.bio{
+        margin-bottom: -36px;
+        @include mq($until:desktop){
+          margin-bottom:0px;
         }
+      }
+    }
+  }
 
-        @include mq(desktop) {
-            max-width: 300px;
-        }
+  &__illo{
+    position: absolute;
+    width: 100%;
+    bottom: -102px;
+
+    @include mq($until:desktop){
+      bottom:-85px;
     }
 
-    img {
-        display: block;
-        margin-bottom: 6px;
-        max-width: 100%;
+    @include mq($until:mobileLandscape){
+      bottom: -219px;
     }
-}
 
-.us-election__question {
-    color: $c-red;
-    padding-bottom: 0;
-    font-weight: bold;
-}
+    img{
+      width: 100%;
+      display: block;
+      margin-top: 55px;
+      margin-left: -18px;
+      z-index: 10;
 
-.us-election__ios--middle {
-    display: block;
+      @include mq($until:mobileLandscape){
+        width: 330%;
+        margin-top: 65px;
+        margin-left: -12px;
+      }
+    }
+  }
 
-    @include mq(tablet) {
+  &__social{
+    width: 182px;
+    margin-left: -229px;
+    margin-top: -211px;
+    position: absolute;
+
+    @include mq($until:wide){
+      margin-left: -166px;
+      width: 173px;
+    }
+
+    @include mq($until: leftCol){
+      margin-left:0px;
+      position:relative;
+      margin-top:0px;
+      width:300px;
+    }
+
+    @include mq($until:mobileLandscape){
+      width:300px;
+    }
+
+    .meta__social{
+      border-top: none;
+    }
+
+    &-bubble{
+
+      .social__cta{
+        position: absolute;
+        top: 0px;
+        font-size: 18px;
+        font-weight: 200;
+        line-height: 22px;
+        margin-top: 11px;
+        margin-left: 12px;
+        color: #333;
+        width: 169px;
+
+        @include mq($until: wide){
+          margin-top: 30px;
+          font-size: 15px;
+          line-height: 18px;
+          width: 134px;
+        }
+      }
+
+      svg{
+        position: relative;
+        z-index: -10;
+
+        @include mq($until: wide){
+          width: 150px;
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__form{
+    overflow: hidden;
+    margin-top: 1461px;
+    @include mq($until: desktop){
+      margin-left: -10px;
+      margin-top: 16px;
+      overflow: auto;
+    }
+
+    &.desktop{
+      @include mq($until: desktop){
         display: none;
+      }
     }
 
-    @include mq(wide) {
-        display: block;
+    &.mobile{
+      display: none;
+      @include mq($until: desktop){
+      display: block;
+
+      iframe{
+        height: 1466px;
+        margin-top: -72px;
+      }
+
+      @include mq($until:mobileLandscape){
+        height:1630px;
+        iframe{
+          margin-top: -90px;
+        }
+      }
+      }
     }
+  }
+
+  &__privacy-message{
+    font-size: 12px;
+    line-height: 15px;
+    color: #7676767;
+    padding: 10px;
+    margin-top: -570px;
+    z-index: -10;
+    position: relative;
+
+    @include mq($until:mobileLandscape){
+      padding: 10px 0;
+      margin-top: -643px;
+    }
+  }
+
+  &__bio{
+    width: 100%;
+    height: auto;
+    bottom: 460px;
+    overflow: hidden;
+    border-top: 1px solid #ececec;
+    padding-top: 0px;
+
+    @include mq($until:mobileLandscape){
+      position: relative;
+      width: 100%;
+      bottom: 10px;
+      border-bottom: 1px solid #ececec;
+      padding-bottom: 6px;
+      border-top: 1px solid #ececec;
+      margin-top: 17px;
+    };
+
+    .bio-headshot{
+        width: 36%;
+        float: left;
+        margin-top: -14px;
+        overflow: hidden;
+
+        @include mq($until:mobileLandscape){
+          width: 100%;
+        }
+
+        img{
+          display: block;
+          width: 270px;
+          margin-left: -21px;
+          border-bottom: 1px solid #ececec;
+
+
+          @include mq($until:tablet){
+            width: 33vw;
+          }
+
+          @include mq($until:mobileLandscape){
+            width: 147px;
+          }
+        }
+      }
+
+    .bio-text{
+      font-family: "Guardian Text Egyptian Web";
+      font-size: 14px;
+      line-height: 18px;
+      margin-left: 20px;
+      float: left;
+      width: 60%;
+      height: auto;
+      margin-top: 8px;
+      margin-bottom: 12px;
+
+      @include mq($until:tablet){
+        width: 50vw;
+      }
+
+      @include mq($until:mobileLandscape){
+      margin-left: 2px;
+      width: 100%;
+      margin-top: 2px;
+      height: auto;
+      margin-bottom:12px;
+      }
+
+      h1{
+        font-size: 18px;
+        font-family: "Guardian Egyptian Web";
+        font-weight: 400;
+        color: #333;
+        margin-bottom: 16px;
+        margin-top: 4px;
+      }
+    }
+
+    a{
+      color: inherit;
+    }
+
+    .bio-facebook,.bio-twitter{
+      background-color: #ededed;
+      padding: 6px 20px;
+      border-radius: 20px;
+      width: auto;
+      font-size: 14px;
+      width: auto;
+      margin-top: 6px;
+      margin-left: 20px;
+      font-family:'Guardian Text Sans Web' , 'Guardian Agate Sans 1 Web';
+      color: #005689;
+      font-weight: 600;
+      overflow: auto;
+      float: left;
+
+      @include mq($until:mobileLandscape){
+        margin-left: 0px;
+        margin-right: 10px;
+      }
+
+      svg{
+        float: left;
+        margin-top: 3px;
+      }
+      .text{
+        float: left;
+        margin-left: 10px;
+      }
+
+      &:hover{
+        background-color:#005689;
+        color: white;
+
+        svg{
+          path{
+            fill:white;
+          }
+        }
+      }
+
+    }
+  }
+
+  &__footer{
+    height: 410px;
+    margin-top: 40px;
+
+    @include mq($until: mobileLandscape){
+      height: 400px;
+    }
+
+    &-wrapper{
+      position: relative;
+    }
+
+    &-left{
+      float: left;
+      height: 0px;
+      position: relative;
+      z-index: 30;
+      margin-top: 40px;
+      overflow: visible;
+
+      @include mq($until: leftCol){
+        margin-top: 38px;
+      }
+
+      @include mq($until: mobileLandscape){
+        float: none;
+        width: 100%;
+        margin-top: 0px;
+        height: 50px;
+      }
+
+      .content__headline{
+        font-weight: 600;
+        line-height: 22px;
+        font-size: 21px;
+
+        @include mq($until: leftCol){
+          margin-top: 0px;
+          width: 240px;
+        }
+
+        @include mq($until:mobileLandscape){
+          color: white;
+          height: 60px;
+        }
+      }
+    }
+
+    &-form{
+      float: left;
+      width: 30%;
+      margin-top: 127px;
+      position: relative;
+      z-index: 3000;
+
+      iframe{
+        width: 300px !important;
+        height: 450px !important;
+
+        @include mq($until:leftCol){
+          margin-top: 30px;
+          position: relative;
+          z-index: 3000;
+        }
+
+        @include mq($until: tablet){
+          width:50vw !important;
+        }
+        @include mq($until:mobileLandscape){
+          width:300px !important;
+        }
+      }
+
+      @include mq($until:leftCol){
+        margin-top:0px;
+      }
+
+      @include mq($until:desktop){
+          height:400px;
+      }
+
+      @include mq($until:mobileLandscape){
+        margin-top: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width:90%;
+        height: 500px
+      }
+    }
+
+    &-right{
+      float: left;
+      width: 30%;
+      color: $byline;
+      margin-top: 68px;
+
+      @include mq($until: mobileLandscape){
+        float: none;
+        width: 100%;
+        margin-top: 0px;
+      }
+
+      img{
+        display: block;
+        width: 80%;
+        margin-top: -70px;
+        margin-left: 52px;
+      }
+    }
+
+    .membership-interactive{
+      &__background-2{
+        overflow: hidden;
+        height: 130px;
+
+        @include mq($until:mobileLandscape){
+          width: 122%;
+          left: -22px;
+          margin-top: -30px;
+        }
+
+        svg{
+          margin-top: -170px;
+
+          @include mq($until:desktop){
+            margin-top: -267px;
+          }
+
+          @include mq($until:mobileLandscape){
+            margin-top: 0px;
+            width: 100%;
+          }
+
+        }
+      }
+
+      &__background{
+        overflow: hidden;
+        height: 130px;
+        top: -5px;
+
+        @include mq($until:mobileLandscape){
+          top: -47px;
+          height: 172px;
+          width: 122%;
+          left: -29px;
+        }
+        svg{
+          margin-top: -135px;
+          @include mq($until:mobileLandscape){
+            margin-top: 0px;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  a{
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &__cta{
+    background-color: #005689;
+    border-radius: 30px;
+    height: 30px;
+    color: white;
+    padding-top: 8px;
+    padding-left: 18px;
+  }
 }
 
-.us-election__ios--end {
+#onward{
+  display: none !important;
+}
+
+.top-banner-ad-container{
+  display: none !important;
+}
+
+.ios{
+
+  .article{
+    background-color: white;
+  }
+
+  .membership-interactive__footer-left{
+    .content__headline{
+      color: #005689;
+    }
+  }
+  .membership-interactive__background{
     display: none;
+  }
+  .membership-interactive__background-2{
+    display: none;
+  }
 
-    @include mq(tablet) {
-        display: block;
-    }
+  .membership-interactive__social{
+    display: none;
+  }
 
-    @include mq(wide) {
-        display: none;
+  .membership-interactive__headline{
+    .content__headline{
+      margin-top: 6px;
+      margin-bottom: 10px;
+
+      &:nth-child(1){
+        color: $byline;
+      }
+
+      &--byline{
+        margin-bottom: 10px;
+      }
     }
+  }
+  .video-button{
+    display: none;
+  }
+  .video-time{
+    display: none;
+  }
 }

@@ -2,7 +2,7 @@
 var pkg = require('./package.json');
 var currentTime = +new Date();
 var versionedAssetPath = 'assets-' + currentTime;
-var CDN = 'http://interactive.guim.co.uk/';
+var CDN = 'https://interactive.guim.co.uk/';
 var deployAssetPath = CDN + pkg.config.s3_folder + versionedAssetPath;
 var localAssetPath = 'https://localhost:' + pkg.config.port + '/assets';
 
@@ -19,7 +19,7 @@ module.exports = function(grunt) {
           base: './build/',
           livereload: true,
           middleware: function (connect, options, middlewares) {
-            // inject a custom middleware http://stackoverflow.com/a/24508523 
+            // inject a custom middleware http://stackoverflow.com/a/24508523
             middlewares.unshift(function (req, res, next) {
                 res.setHeader('Access-Control-Allow-Origin', '*');
                 res.setHeader('Access-Control-Allow-Methods', '*');
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
 
     autoprefixer: {
         options: {
-            map: (isDev) ? true : false 
+            map: (isDev) ? true : false
         },
         css: { src: 'build/assets/css/*.css' }
     },
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
     jshint: {
       options: {
           jshintrc: true,
-          force: true 
+          force: true
       },
         files: [
             'Gruntfile.js',
@@ -156,7 +156,7 @@ module.exports = function(grunt) {
             options: {
                 patterns: [{
                   match: /@@assetPath@@/g,
-                  replacement: deployAssetPath 
+                  replacement: deployAssetPath
                 }]
             },
             files: [{
@@ -250,14 +250,14 @@ module.exports = function(grunt) {
     'requirejs',
     'copy'
   ]);
-  
+
   grunt.registerTask('default', [
       'build',
       'replace:local',
       'connect',
       'watch'
   ]);
-  
+
   grunt.registerTask('deploy', [
       'build',
       'rename',
@@ -265,4 +265,3 @@ module.exports = function(grunt) {
       's3'
   ]);
 };
-
