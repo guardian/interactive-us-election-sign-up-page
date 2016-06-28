@@ -32,6 +32,11 @@ $byline: #6fa19a;
       &.content__headline--byline{
         color: $byline;
       }
+
+      .content__headline__link {
+        color: inherit;
+        text-decoration: inherit;
+      }
     }
   }
 
